@@ -16,7 +16,7 @@ class CreateKategoriTiket extends Migration
         Schema::create('kategori_tiket', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama kategori');
-            $table->int('harga');
+            $table->integer('harga');
             $table->text('deskripsi');
             $table->timestamps();
         });

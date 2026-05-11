@@ -15,5 +15,7 @@ use App\Http\Controllers\PengunjungController;
 */
 
 Route::get('/', function () {
-    Route::resource('pengunjung', PengunjungController::class);
+    
 });
+
+Route::get('/pengunjung', PengunjungController::class, 'index');

@@ -26,7 +26,7 @@ class PengunjungController extends Controller
         $request->validate([
             'nama' => 'required',
             'email' => 'required|email',
-            'no_hp' => 'required', // Sesuaikan input name di form nanti
+            'no_hp' => 'required', 
         ]);
 
         // Catatan: Jika di DB kolomnya tetap 'no hp' (pakai spasi)
