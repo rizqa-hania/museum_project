@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Petugas; 
+use App\Petugas; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PetugasController extends Controller
 {
@@ -19,12 +20,20 @@ class PetugasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_petugas' => 'required',
+            'nama' => 'required',
             'jabatan' => 'required',
             'shift' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ]);
 
-        Petugas::create($request->all());
+        Petugas::create([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'shift' => $request->shift,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         return redirect()->route('petugas.index')->with('success', 'Petugas baru berhasil didaftarkan!');
     }
@@ -38,13 +47,21 @@ class PetugasController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_petugas' => 'required',
+            'nama' => 'required',
             'jabatan' => 'required',
             'shift' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ]);
 
         $petugas = Petugas::findOrFail($id);
-        $petugas->update($request->all());
+        $petugas->update([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'shift' => $request->shift,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         return redirect()->route('petugas.index')->with('success', 'Data petugas berhasil diperbarui!');
     }

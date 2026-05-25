@@ -18,7 +18,7 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table table-hover table-bordered">
+                <table border="1">
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
@@ -31,13 +31,13 @@
                     <tbody>
                         @forelse($pengunjungs as $p)
                         <tr>
-                            <td>{{ $p->id }}</td>
+                            <td>{{ $p->pengunjung_id }}</td>
                             <td>{{ $p->nama }}</td>
                             <td>{{ $p->email }}</td>
-                            <td>{{ $p['no hp'] }}</td> {{-- Sesuaikan jika kolom di DB pakai spasi --}}
+                            <td>{{ $p->no_hp }}</td>
                             <td class="text-center">
-                                <form action="{{ route('pengunjung.destroy', $p->id) }}" method="POST">
-                                    <a href="{{ route('pengunjung.edit', $p->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('pengunjung.destroy', $p->pengunjung_id) }}" method="POST">
+                                    <a href="{{ route('pengunjung.edit', $p->pengunjung_id) }}" class="btn btn-warning btn-sm">Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Hapus</button>

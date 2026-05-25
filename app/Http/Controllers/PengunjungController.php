@@ -31,7 +31,7 @@ class PengunjungController extends Controller
         Pengunjung::create([
             'nama' => $request->nama,
             'email' => $request->email,
-            'no hp' => $request->no_hp, 
+            'no_hp' => $request->no_hp, 
         ]);
 
         return redirect()->route('pengunjung.index')->with('success', 'Data berhasil ditambahkan!');
@@ -57,7 +57,7 @@ class PengunjungController extends Controller
         $pengunjung->update([
             'nama' => $request->nama,
             'email' => $request->email,
-            'no hp' => $request->no_hp,
+            'no_hp' => $request->no_hp,
         ]);
 
         return redirect()->route('pengunjung.index')->with('success', 'Data berhasil diupdate!');

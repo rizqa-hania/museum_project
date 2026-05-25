@@ -16,24 +16,27 @@
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
-                <table class="table table-striped">
+                <table border="1">
                     <thead>
                         <tr>
                             <th>Nama</th>
                             <th>Jabatan</th>
                             <th>Shift</th>
-                            <th width="200">Aksi</th>
+                            <th>Email</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($petugas as $p)
                         <tr>
-                            <td>{{ $p->nama_petugas }}</td>
+                            <td>{{ $p->nama }}</td>
                             <td><span class="badge bg-info text-dark">{{ $p->jabatan }}</span></td>
                             <td>{{ $p->shift }}</td>
+                            <td>{{ $p->email }}</td>
                             <td>
-                                <a href="{{ route('petugas.edit', $p->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{ route('petugas.destroy', $p->id) }}" method="POST" class="d-inline">
+                                
+                                <form action="{{ route('petugas.destroy', $p->petugas_id) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('petugas.edit', $p->petugas_id) }}" class="btn btn-warning btn-sm">Edit</a>
                                     @csrf @method('DELETE')
                                     <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data?')">Hapus</button>
                                 </form>
@@ -41,7 +44,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="4" class="text-center">Data kosong.</td>
+                            <td colspan="5" class="text-center">Data kosong.</td>
                         </tr>
                         @endforelse
                     </tbody>

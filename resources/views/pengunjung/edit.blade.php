@@ -27,6 +27,7 @@
         </div>
 
         <button type="submit">Update</button>
+        <a href="{{ route('pengunjung.index') }}">Kembali</a>
     </form>
 
 </body>

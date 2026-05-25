@@ -15,7 +15,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Nama Petugas</label>
-                                <input type="text" name="nama_petugas" class="form-control" required>
+                                <input type="text" name="nama" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Jabatan</label>
@@ -32,6 +32,14 @@
                                     <option value="Siang">Siang</option>
                                     <option value="Malam">Malam</option>
                                 </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control">
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Simpan Data</button>
                             <a href="{{ route('petugas.index') }}" class="btn btn-link w-100 mt-2">Batal</a>
