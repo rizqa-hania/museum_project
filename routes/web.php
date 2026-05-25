@@ -16,7 +16,8 @@ use App\Http\Controllers\TiketController;
 */
 
 Route::get('/', function () {
-    Route::get('/pengunjung', [PengunjungController::class, 'index']);
-    Route::resource('tiket', TiketController::class);
+    return view('welcome');
 });
 
+// PENGUNJUNG
+Route::get('/pengunjung', [PengunjungController::class, 'index']);

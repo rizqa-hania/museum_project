@@ -11,7 +11,7 @@ class KategoriSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('kategori_tiket')->insert([
+         DB::table('kategori_tiket')->insert([
             [
                 'nama_kategori' => 'Dewasa',
                 'harga' => 50000,

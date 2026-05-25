@@ -6,14 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tiket extends Model
 {
-    public function up()
-{
-    Schema::create('tikets', function (Blueprint $table) {
-       $table->bigIncrements('id');
-       $table->string('nama pengunjung');
-       $table->integer('harga');
-       $table->text('deskripsi');
-       $table->timestamps();
-    });
-}
+    protected $table = 'tiket';
+    protected $primaryKey = 'tiket_id';
+    protected $fillable = ['kategori_id', 'pengunjung_id', 'petugas_id', 'tanggal_kunjungan'];
 }
