@@ -14,7 +14,7 @@ class CreatePengunjungTable extends Migration
     public function up()
     {
         Schema::create('pengunjung', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('pengunjung_id');
             $table->string('nama');
             $table->string('email');
             $table->string('no hp');

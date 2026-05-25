@@ -14,7 +14,13 @@ class CreateTransaksiTable extends Migration
     public function up()
     {
         Schema::create('transaksi', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('transaksi_id');
+            $table->foreignId('pengunjung_id')->references('pengunjung_id')->on('pengunjung');
+            $table->foreignId('kategori_id')->references('kategori_id')->on('kategori_tiket');
+            $table->foreignId('jadwal_id')->references('jadwal_id')->on('jadwal');
+            $table->integer('jumlah_tiket');
+            $table->integer('total_harga');
+            $table->enum('status', ['pending', 'paid'])->default('pending');
             $table->timestamps();
         });
     }
