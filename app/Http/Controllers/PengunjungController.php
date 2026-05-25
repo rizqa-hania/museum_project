@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pengunjung;
+use App\Pengunjung;
 use Illuminate\Http\Request;
 
 class PengunjungController extends Controller

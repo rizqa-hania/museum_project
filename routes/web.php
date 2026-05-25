@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PengunjungController;
+use App\Http\Controllers\TiketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\PengunjungController;
 */
 
 Route::get('/', function () {
-    
+    Route::get('/pengunjung', [PengunjungController::class, 'index']);
+    Route::resource('tiket', TiketController::class);
 });
 
-Route::get('/pengunjung', PengunjungController::class, 'index');
