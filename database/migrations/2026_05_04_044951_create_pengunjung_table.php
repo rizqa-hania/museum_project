@@ -17,7 +17,7 @@ class CreatePengunjungTable extends Migration
             $table->bigIncrements('pengunjung_id');
             $table->string('nama');
             $table->string('email');
-            $table->string('no hp');
+            $table->string('no_hp');
             $table->timestamps();
         });
     }
