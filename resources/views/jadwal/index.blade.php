@@ -22,7 +22,7 @@
                         </button>
                     </div>
                 @endif
-                <table id="table" class="table table-sm table-striped table-hover">
+                <table border="1" class="table table-sm table-striped table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -40,9 +40,16 @@
                             <td>{{ $v->jam }}</td>
                             <td>{{ $v->kuota }}</td>
                             <td>
-                                <a href="{{ route('jadwal.edit', $v->jadwal_id) }}" class="btn btn-success btn-sm">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
+                                <form action="{{ route('jadwal.destroy', $v->jadwal_id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a href="{{ route('jadwal.edit', $v->jadwal_id) }}" class="btn btn-success btn-sm">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus jadwal ini?')">
+                                        <i class="fas fa-trash"></i> Hapus
+                                    </button>
+                                </form>
                                 <div class="d-flex justify-content-center">
                                     @if($v->status == 0 || $v->status == 2) {{-- Jika Nonaktif --}}
                                         <form action="{{ route('jadwal.aktif', $v->jadwal_id) }}" method="POST" class="mr-1">

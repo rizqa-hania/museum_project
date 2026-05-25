@@ -47,6 +47,8 @@ Route::post('/jadwal', [JadwalController::class, 'store'])->name('jadwal.store')
 Route::get('/jadwal/{id}/edit', [JadwalController::class, 'edit'])->name('jadwal.edit');
 Route::put('/jadwal/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
 Route::delete('/jadwal/{id}', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
+Route::put('/jadwal/{id}/aktif', [JadwalController::class, 'aktif'])->name('jadwal.aktif');
+Route::put('/jadwal/{id}/nonaktif', [JadwalController::class, 'nonaktif'])->name('jadwal.nonaktif');
 
 // TRANSAKSI
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
