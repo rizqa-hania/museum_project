@@ -14,7 +14,10 @@ class CreateJadwalTable extends Migration
     public function up()
     {
         Schema::create('jadwal', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('jadwal_id');
+            $table->date('tanggal');
+            $table->time('jam');
+            $table->integer('kuota');
             $table->timestamps();
         });
     }
