@@ -8,5 +8,10 @@ class Jadwal extends Model
 {
     protected $table = 'jadwal';
     protected $primaryKey = 'jadwal_id';
-    protected $fillable = ['tanggal', 'waktu', 'kuota'];
+    protected $fillable = ['tanggal', 'jam', 'kuota'];
+    
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'jadwal_id');
+    }
 }
