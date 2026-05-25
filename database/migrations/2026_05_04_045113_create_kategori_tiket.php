@@ -14,9 +14,9 @@ class CreateKategoriTiket extends Migration
     public function up()
     {
         Schema::create('kategori_tiket', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nama kategori');
-            $table->int('harga');
+            $table->bigIncrements('kategori_id');
+            $table->string('nama_kategori');
+            $table->integer('harga');
             $table->text('deskripsi');
             $table->timestamps();
         });
