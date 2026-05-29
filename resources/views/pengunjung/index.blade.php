@@ -1,9 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pengunjung</title>
-</head>
-<body class="bg-light">
 <div class="container mt-5">
     <div class="card shadow-sm">
         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
@@ -15,7 +9,7 @@
             @endif
 
             <div class="table-responsive">
-                <table border="1">
+                <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
@@ -43,4 +37,3 @@
         </div>
     </div>
 </div>
-</body>

@@ -22,7 +22,7 @@
                         </button>
                     </div>
                 @endif
-                <table border="1" class="table table-sm table-striped table-hover">
+                <table class="table table-sm table-striped table-hover">
                     <thead>
                         <tr>
                             <th>No</th>

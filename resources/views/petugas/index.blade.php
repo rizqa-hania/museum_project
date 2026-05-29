@@ -1,13 +1,6 @@
 @extends('template.layout')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Daftar Petugas Museum</title>
-</head>
-<body class="bg-light">
-    <div class="container mt-5">
+    <div class="container-fluid">
         <div class="card shadow">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Manajemen Petugas</h4>
@@ -18,7 +11,7 @@
                     <div class="alert alert-success">{{ session('success') }}</div>
                 @endif
 
-                <table border="1">
+                <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>Nama</th>
@@ -54,6 +47,4 @@
             </div>
         </div>
     </div>
-    @endsection
-</body>
-</html>
+@endsection

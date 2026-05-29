@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('AdminLTE/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Museum</span>
     </a>
 
     <!-- Sidebar -->
@@ -13,7 +13,7 @@
           <img src="{{ asset('AdminLTE/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -44,27 +44,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('user.index')}}" class="nav-link">
+                <a href="{{route('petugas.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Form User</p>
+                  <p>Form Petugas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('customer.index')}}" class="nav-link">
+                <a href="{{route('jadwal.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Form Customer </p>
+                  <p>Jadwal Museum</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('category.index')}}" class="nav-link">
+                <a href="{{route('tiket.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Form Category </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('products.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Form Product </p>
+                  <p>Kategori Tiket Museum</p>
                 </a>
               </li>
             </ul>
@@ -80,27 +74,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('transactions.index')}}" class="nav-link">
+                <a href="{{route('transaksi.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Form Transaksi</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Laporan
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Laporan Penjualan</p>
+                  <p>Transaksi Pengunjung</p>
                 </a>
               </li>
             </ul>
