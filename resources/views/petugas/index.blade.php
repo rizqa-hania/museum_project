@@ -1,3 +1,7 @@
+@extends('template.layout')
+@section('content')
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Daftar Petugas Museum</title>
@@ -17,20 +21,20 @@
                 <table border="1">
                     <thead>
                         <tr>
-                            <th>No</th>
                             <th>Nama</th>
-                            <th>Email</th>
+                            <th>Jabatan</th>
                             <th>Shift</th>
+                            <th>Email</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($petugas as $p)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $p->nama }}</td>
-                            <td>{{ $p->email }}</td>
+                            <td><span class="badge bg-info text-dark">{{ $p->jabatan }}</span></td>
                             <td>{{ $p->shift }}</td>
+                            <td>{{ $p->email }}</td>
                             <td>
                                 
                                 <form action="{{ route('petugas.destroy', $p->petugas_id) }}" method="POST" class="d-inline">
@@ -50,4 +54,6 @@
             </div>
         </div>
     </div>
+    @endsection
 </body>
+</html>
