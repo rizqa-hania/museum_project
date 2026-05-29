@@ -34,7 +34,7 @@ class PengunjungController extends Controller
             'no_hp' => $request->no_hp, 
         ]);
 
-        return redirect()->route('pengunjung.index')->with('success', 'Data berhasil ditambahkan!');
+        return redirect()->route('transaksi.create', $pengunjung->pengunjung_id);
     }
 
     
@@ -60,15 +60,12 @@ class PengunjungController extends Controller
             'no_hp' => $request->no_hp,
         ]);
 
-        return redirect()->route('pengunjung.index')->with('success', 'Data berhasil diupdate!');
+        return redirect()->route('transaksi.create', $pengunjung->pengunjung_id);
     }
 
    
     public function destroy($id)
     {
-        $pengunjung = Pengunjung::findOrFail($id);
-        $pengunjung->delete();
-
-        return redirect()->route('pengunjung.index')->with('success', 'Data berhasil dihapus!');
+        //
     }
 }

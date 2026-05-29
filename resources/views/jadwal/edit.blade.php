@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label> 
-                        <input type="text" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal', $jadwal->tanggal) }}" readonly>
+                        <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal', $jadwal->tanggal) }}">
                         @error('tanggal')
                             <span class="text-danger small">{{ $message }}</span>
                         @enderror

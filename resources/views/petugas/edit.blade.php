@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Edit Petugas</title>
@@ -18,12 +16,12 @@
                                 <input type="text" name="nama" class="form-control" value="{{ $petugas->nama }}" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Jabatan</label>
-                                <select name="jabatan" class="form-select">
-                                    <option value="Kasir" {{ $petugas->jabatan == 'Kasir' ? 'selected' : '' }}>Kasir</option>
-                                    <option value="Pemandu" {{ $petugas->jabatan == 'Pemandu' ? 'selected' : '' }}>Pemandu</option>
-                                    <option value="Keamanan" {{ $petugas->jabatan == 'Keamanan' ? 'selected' : '' }}>Keamanan</option>
-                                </select>
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" value="{{ $petugas->email }}">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak ingin mengubah password">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Shift</label>
@@ -32,14 +30,6 @@
                                     <option value="Siang" {{ $petugas->shift == 'Siang' ? 'selected' : '' }}>Siang</option>
                                     <option value="Malam" {{ $petugas->shift == 'Malam' ? 'selected' : '' }}>Malam</option>
                                 </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" value="{{ $petugas->email }}">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak ingin mengubah password">
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Update Data</button>
                             <a href="{{ route('petugas.index') }}" class="btn btn-link w-100 mt-2">Kembali</a>
@@ -50,4 +40,3 @@
         </div>
     </div>
 </body>
-</html>

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Tambah Petugas</title>
@@ -18,12 +16,12 @@
                                 <input type="text" name="nama" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Jabatan</label>
-                                <select name="jabatan" class="form-select" required>
-                                    <option value="Kasir">Kasir</option>
-                                    <option value="Pemandu">Pemandu</option>
-                                    <option value="Keamanan">Keamanan</option>
-                                </select>
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Shift</label>
@@ -33,16 +31,8 @@
                                     <option value="Malam">Malam</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control">
-                            </div>
                             <button type="submit" class="btn btn-primary w-100">Simpan Data</button>
-                            <a href="{{ route('petugas.index') }}" class="btn btn-link w-100 mt-2">Batal</a>
+                            <a href="{{ route('petugas.index') }}" class="btn btn-link w-100 mt-2">Kembali</a>
                         </form>
                     </div>
                 </div>
@@ -50,4 +40,3 @@
         </div>
     </div>
 </body>
-</html>

@@ -21,18 +21,16 @@ class PetugasController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'jabatan' => 'required',
-            'shift' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:5',
+            'shift' => 'required',
         ]);
 
         Petugas::create([
             'nama' => $request->nama,
-            'jabatan' => $request->jabatan,
-            'shift' => $request->shift,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'shift' => $request->shift,
         ]);
 
         return redirect()->route('petugas.index')->with('success', 'Petugas baru berhasil didaftarkan!');
@@ -48,19 +46,17 @@ class PetugasController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'jabatan' => 'required',
-            'shift' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:5',
+            'shift' => 'required',
         ]);
 
         $petugas = Petugas::findOrFail($id);
         $petugas->update([
             'nama' => $request->nama,
-            'jabatan' => $request->jabatan,
-            'shift' => $request->shift,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'shift' => $request->shift,
         ]);
 
         return redirect()->route('petugas.index')->with('success', 'Data petugas berhasil diperbarui!');

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Tiket Museum</title>
+    <title>Edit Kategori Tiket</title>
 </head>
 <body class="bg-light">
     <div class="container mt-5">
@@ -11,30 +9,26 @@
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-header bg-warning text-dark">
-                        <h5 class="mb-0">Edit Data Tiket</h5>
+                        <h5 class="mb-0">Edit Kategori Tiket</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('tiket.update', $tiket->id) }}" method="POST">
+                        <form action="{{ route('tiket.update', $tiket->kategori_id) }}" method="POST">
                             @csrf
                             @method('PUT')
 
                             <div class="mb-3">
-                                <label class="form-label">Nama Pengunjung</label>
-                                <input type="text" name="nama_pengunjung" class="form-control" value="{{ $tiket->nama_pengunjung }}" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label class="form-label">Jenis Tiket</label>
-                                <select name="jenis_tiket" class="form-select" required>
-                                    <option value="Dewasa" {{ $tiket->jenis_tiket == 'Dewasa' ? 'selected' : '' }}>Dewasa</option>
-                                    <option value="Anak-anak" {{ $tiket->jenis_tiket == 'Anak-anak' ? 'selected' : '' }}>Anak-anak</option>
-                                    <option value="Turis Asing" {{ $tiket->jenis_tiket == 'Turis Asing' ? 'selected' : '' }}>Turis Asing</option>
-                                </select>
+                                <label class="form-label">Nama Kategori</label>
+                                <input type="text" name="nama_kategori" class="form-control" value="{{ $tiket->nama_kategori }}" required>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Harga</label>
                                 <input type="number" name="harga" class="form-control" value="{{ $tiket->harga }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <textarea name="deskripsi" class="form-control">{{ $tiket->deskripsi }}</textarea>
                             </div>
 
                             <div class="d-flex justify-content-between">
@@ -48,4 +42,3 @@
         </div>
     </div>
 </body>
-</html>

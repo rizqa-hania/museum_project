@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <title>Edit Pengunjung</title>
+    <title>Perbarui Data Pengunjung</title>
 </head>
 <body>
-
-    <h1>Edit Pengunjung</h1>
-
+    <h3>Silahkan Periksa Kembali Data Pengunjung</h3>
     <form action="{{ route('pengunjung.update', $pengunjung->pengunjung_id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -26,9 +22,7 @@
             <input type="text" name="no_hp" value="{{ $pengunjung->no_hp }}">
         </div>
 
-        <button type="submit">Update</button>
-        <a href="{{ route('pengunjung.index') }}">Kembali</a>
+        <button type="submit">Simpan Perubahan & Lanjut</button>
+        <a href="{{ route('transaksi.create', $pengunjung->pengunjung_id) }}">Batal</a>
     </form>
-
 </body>
-</html>

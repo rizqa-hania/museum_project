@@ -29,7 +29,7 @@ class KategoriSeeder extends Seeder
             [
                 'nama_kategori' => 'Pelajar',
                 'harga' => 35000,
-                'deskripsi' => 'Tiket untuk pelajar dengan menunjukkan kartu pelajar yang valid',
+                'deskripsi' => 'Tiket untuk pelajar',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

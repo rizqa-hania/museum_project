@@ -49,20 +49,7 @@
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus jadwal ini?')">
                                         <i class="fas fa-trash"></i> Hapus
                                     </button>
-                                </form>
-                                <div class="d-flex justify-content-center">
-                                    @if($v->status == 0 || $v->status == 2) {{-- Jika Nonaktif --}}
-                                        <form action="{{ route('jadwal.aktif', $v->jadwal_id) }}" method="POST" class="mr-1">
-                                            @csrf @method('PUT')
-                                            <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('Aktifkan jadwal ini?')">Aktifkan</button>
-                                        </form>
-                                    @else {{-- Jika Aktif --}}
-                                        <form action="{{ route('jadwal.nonaktif', $v->jadwal_id) }}" method="POST" class="mr-1">
-                                            @csrf @method('PUT')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Nonaktifkan jadwal ini?')">Nonaktifkan</button>
-                                        </form>
-                                    @endif
-                                </div>
+                                </form>pph
                             </td>
                         </tr>
                         @endforeach

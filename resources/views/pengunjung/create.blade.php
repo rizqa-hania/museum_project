@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <title>Tambah Pengunjung</title>
+    <title>Isi Data Pengunjung</title>
 </head>
 <body>
-
-    <h1>Tambah Pengunjung</h1>
-
+    <h3>Silahkan Isi Data Pengunjung</h3>
     <form action="{{ route('pengunjung.store') }}" method="POST">
         @csrf
-
         <div>
             <label>Nama</label>
             <input type="text" name="nama">
@@ -25,9 +20,7 @@
             <input type="text" name="no_hp">
         </div>
 
-        <button type="submit">Simpan</button>
-        <a href="{{ route('pengunjung.index') }}">Kembali</a>
+        <a href="{{ route('pengunjung.index') }}">Kembali ke Beranda</a>
+        <button type="submit">Lanjut Pilih Tiket</button>
     </form>
-
 </body>
-</html>
