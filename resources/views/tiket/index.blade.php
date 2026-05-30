@@ -1,3 +1,5 @@
+@extends('template.layout')
+@section('content')
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Daftar Kategori Tiket Museum</h2>
@@ -46,3 +48,4 @@
         </div>
     </div>
 </div>
+@endsection

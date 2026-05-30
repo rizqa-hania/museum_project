@@ -1,3 +1,5 @@
+@extends('template.layout')
+@section('content')
 <head>
     <title>Perbarui Data Pengunjung</title>
 </head>
@@ -26,3 +28,4 @@
         <a href="{{ route('transaksi.create', $pengunjung->pengunjung_id) }}">Batal</a>
     </form>
 </body>
+@endsection

@@ -1,3 +1,5 @@
+@extends('template.layout')
+@section('content')
 <head>
     <title>Isi Data Pengunjung</title>
 </head>
@@ -24,3 +26,4 @@
         <button type="submit">Lanjut Pilih Tiket</button>
     </form>
 </body>
+@endsection
