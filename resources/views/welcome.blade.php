@@ -1,99 +1,125 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>E-Ticketing Museum | Beranda</title>
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
             }
 
-            .full-height {
-                height: 100vh;
+            body{
+                font-family: Arial, sans-serif;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+            .hero{
+                min-height:100vh;
+                background-image:url('{{ asset('images/museum-bg.png') }}');
+                background-size:cover;
+                background-position:center;
+                position:relative;
             }
 
-            .position-ref {
-                position: relative;
+            .overlay{
+                position:absolute;
+                inset:0;
+                background:rgba(0,0,0,0.35);
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .navbar{
+                position:relative;
+                z-index:2;
+
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+
+                padding:24px 60px;
             }
 
-            .content {
-                text-align: center;
+            .logo{
+                color:white;
+                font-size:28px;
+                font-weight:600;
             }
 
-            .title {
-                font-size: 84px;
+            .login-btn{
+                color:white;
+                text-decoration:none;
+                border:1px solid white;
+                padding:10px 18px;
+                border-radius:8px;
             }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            .content{
+                position:relative;
+                z-index:2;
+
+                height:calc(100vh - 80px);
+
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+
+                padding-left:80px;
+
+                max-width:650px;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
+            .content h1{
+                color:white;
+                font-size:60px;
+                margin-bottom:20px;
             }
+
+            .content p{
+                color:white;
+                font-size:20px;
+                line-height:1.6;
+                margin-bottom:30px;
+            }
+
+            .cta-btn{
+                width:fit-content;
+
+                background:white;
+                color:black;
+
+                text-decoration:none;
+
+                padding:14px 24px;
+
+                border-radius:10px;
+                font-weight:600;
+            }
+
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+    <body>
+        <div class="hero">
+            <div class="overlay"></div>
+            <div class="navbar">
+                <div class="logo">
+                    E-Ticketing Museum
                 </div>
-            @endif
+                <a href="{{ route('login') }}" class="login-btn">
+                    Login Admin
+                </a>
+            </div>
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <h1>
+                    Jelajahi Sejarah
+                </h1>
+                <p>
+                    Pesan tiket kunjungan museum secara online dengan mudah tanpa perlu antre di lokasi.
+                </p>
+                <a href="{{ route('pengunjung.create') }}" class="cta-btn">
+                    Pesan Tiket Sekarang
+                </a>
             </div>
         </div>
     </body>

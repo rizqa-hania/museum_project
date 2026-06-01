@@ -1,36 +1,51 @@
 @extends('template.layout')
 @section('content')
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header bg-warning">Edit Petugas: {{ $petugas->nama }}</div>
-                <div class="card-body">
-                    <form action="{{ route('petugas.update', $petugas->id) }}" method="POST">
-                        @csrf @method('PUT')
-                        <div class="mb-3">
-                            <label class="form-label">Nama Petugas</label>
-                            <input type="text" name="nama" class="form-control" value="{{ $petugas->nama }}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" value="{{ $petugas->email }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak ingin mengubah password">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Shift</label>
-                            <select name="shift" class="form-select">
-                                <option value="Pagi" {{ $petugas->shift == 'Pagi' ? 'selected' : '' }}>Pagi</option>
-                                <option value="Siang" {{ $petugas->shift == 'Siang' ? 'selected' : '' }}>Siang</option>                                    <option value="Malam" {{ $petugas->shift == 'Malam' ? 'selected' : '' }}>Malam</option>
-                            </select>
-                        </div>
-                            <button type="submit" class="btn btn-primary w-100">Update Data</button>
-                            <a href="{{ route('petugas.index') }}" class="btn btn-link w-100 mt-2">Kembali</a>
-                    </form>
-                </div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Edit Data Petugas</h3>
+            </div>
+            <div class="card-body">
+                <form action="{{ route('petugas.update', $petugas->petugas_id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3">
+                        <label class="form-label">Nama Petugas</label>
+                        <input type="text" name="nama"class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama', $petugas->nama) }}">
+                        @error('nama')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $petugas->email) }}">
+                        @error('email')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
+                        @error('password')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Shift</label>
+                        <select name="shift" class="form-control @error('shift') is-invalid @enderror">
+                            <option value="">Pilih Shift</option>
+                            <option value="Pagi" {{ old('shift', $petugas->shift) == 'Pagi' ? 'selected' : '' }}>Pagi</option>
+                            <option value="Siang" {{ old('shift', $petugas->shift) == 'Siang' ? 'selected' : '' }}>Siang</option>
+                            <option value="Malam" {{ old('shift', $petugas->shift) == 'Malam' ? 'selected' : '' }}>Malam</option>
+                        </select>
+                        @error('shift')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <a href="{{ route('petugas.index') }}" class="btn btn-secondary btn-sm px-3"><i class="fas fa-arrow-left"></i> Kembali</a>
+                    <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan Perubahan</button>
+                </form>
             </div>
         </div>
     </div>

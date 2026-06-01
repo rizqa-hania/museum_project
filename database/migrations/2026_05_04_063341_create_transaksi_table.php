@@ -20,7 +20,6 @@ class CreateTransaksiTable extends Migration
             $table->foreignId('jadwal_id')->references('jadwal_id')->on('jadwal');
             $table->integer('jumlah_tiket');
             $table->integer('total_harga');
-            $table->enum('status', ['pending', 'paid'])->default('pending');
             $table->timestamps();
         });
     }

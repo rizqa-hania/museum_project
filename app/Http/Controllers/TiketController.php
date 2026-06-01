@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
-use App\Tiket; 
+
 use Illuminate\Http\Request;
+use App\Tiket; 
 
 class TiketController extends Controller
 {

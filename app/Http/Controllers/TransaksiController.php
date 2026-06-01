@@ -14,7 +14,8 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        $transaksi = Transaksi::with('pengunjung', 'kategori', 'jadwal')->get();
+        return view('transaksi.index', compact('transaksi'));
     }
 
     /**

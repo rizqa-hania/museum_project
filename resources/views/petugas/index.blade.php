@@ -1,50 +1,54 @@
 @extends('template.layout')
 @section('content')
-    <div class="container-fluid">
-        <div class="card shadow">
-            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Manajemen Petugas</h4>
-                <a href="{{ route('petugas.create') }}" class="btn btn-success btn-sm">Tambah Petugas</a>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h3 class="card-title">Manajemen Petugas</h3>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a href="{{ route('petugas.create') }}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i> Petugas Baru
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                @if(session('success'))
-                    <div class="alert alert-success">{{ session('success') }}</div>
-                @endif
-
-                <table class="table table-bordered table-striped">
+            <div class="card-body table-responsive">
+                <table class="table table-sm table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Nama</th>
-                            <th>Jabatan</th>
                             <th>Shift</th>
                             <th>Email</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($petugas as $p)
+                        @foreach ($petugas as $v)
                         <tr>
-                            <td>{{ $p->nama }}</td>
-                            <td><span class="badge bg-info text-dark">{{ $p->jabatan }}</span></td>
-                            <td>{{ $p->shift }}</td>
-                            <td>{{ $p->email }}</td>
+                            <td>{{ $v->nama }}</td>
+                            <td>{{ $v->shift }}</td>
+                            <td>{{ $v->email }}</td>
                             <td>
-                                
-                                <form action="{{ route('petugas.destroy', $p->petugas_id) }}" method="POST" class="d-inline">
-                                    <a href="{{ route('petugas.edit', $p->petugas_id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    @csrf @method('DELETE')
-                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data?')">Hapus</button>
+                                <form action="{{ route('petugas.destroy', $v->petugas_id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a href="{{ route('petugas.edit', $v->petugas_id) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i>
+                                        Edit
+                                    </a>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus petugas ini?')">
+                                        <i class="fas fa-trash"></i> Hapus
+                                    </button>
                                 </form>
                             </td>
                         </tr>
-                        @empty
-                        <tr>
-                            <td colspan="5" class="text-center">Data kosong.</td>
-                        </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+</div>
 @endsection

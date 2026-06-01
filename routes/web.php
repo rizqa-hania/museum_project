@@ -20,7 +20,7 @@ use App\Http\Controllers\TransaksiController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 // PENGUNJUNG
 Route::get('/pengunjung', [PengunjungController::class, 'index'])->name('pengunjung.index');
@@ -63,3 +63,7 @@ Route::get('/transaksi/{id}/pdf', [TransaksiController::class, 'downloadPdf'])->
 //Route::get('/transaksi/{id}/edit', [TransaksiController::class, 'edit'])->name('transaksi.edit');
 //Route::put('/transaksi/{id}', [TransaksiController::class, 'update'])->name('transaksi.update');
 //Route::delete('/transaksi/{id}', [TransaksiController::class, 'destroy'])->name('transaksi.destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -8,12 +8,7 @@ class Transaksi extends Model
 {
     protected $table = 'transaksi';
     protected $primaryKey = 'transaksi_id';
-    protected $fillable = [ 'pengunjung_id', 
-                            'kategori_id', 
-                            'jadwal_id', 
-                            'jumlah_tiket', 
-                            'total_harga', 
-                            'status'];
+    protected $fillable = [ 'pengunjung_id', 'kategori_id', 'jadwal_id', 'jumlah_tiket', 'total_harga'];
 
     public function pengunjung()
     {

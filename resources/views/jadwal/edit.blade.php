@@ -36,8 +36,8 @@
                 </div>
 
                 <div class="card-footer">
+                    <a href="{{ route('jadwal.index') }}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i> Kembali</a>
                     <button type="submit" class="btn btn-primary btn-sm">Update</button>
-                    <a href="{{ route('jadwal.index') }}" class="btn btn-secondary btn-sm">Kembali</a>
                 </div>
             </form>
         </div>
